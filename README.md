@@ -15,3 +15,4 @@ Also check:
 - https://formatfriendsygo.wixsite.com/formatfriendsygo
 - Format Friends Discord: https://discord.com/invite/CynBQA6bYs
 - Garbo format Discord: https://discord.gg/zf9J2RUZkm
+- My other repositories!
