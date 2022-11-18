@@ -17,4 +17,4 @@ Also check:
 - Garbo format Discord: https://discord.gg/zf9J2RUZkm
 - My other repositories!
 _____
-Message me on Discord at Zefile#5500 if you have any questions or issues.
+Message me on Discord @Zefile#5500 if you have any questions or issues.
