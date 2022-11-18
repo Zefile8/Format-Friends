@@ -16,6 +16,6 @@ update mappings.py:
 code to grab new IDs from mappings.json from Edopro and automatically applying ID updates to a banlist.
 _____
 Also check:
-https://formatfriendsygo.wixsite.com/formatfriendsygo
-Format Friends Discord: https://discord.com/invite/CynBQA6bYs
-Garbo format Discord: https://discord.gg/zf9J2RUZkm
+- https://formatfriendsygo.wixsite.com/formatfriendsygo
+- Format Friends Discord: https://discord.com/invite/CynBQA6bYs
+- Garbo format Discord: https://discord.gg/zf9J2RUZkm
