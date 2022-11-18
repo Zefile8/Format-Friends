@@ -1,6 +1,7 @@
 import tkinter
 from tkinter import filedialog as fd
 from tkinter.messagebox import showinfo
+import webbrowser
 import json
 from urllib.request import urlopen
 config_url = urlopen("https://raw.githubusercontent.com/ProjectIgnis/Distribution/master/config/configs.prod.json")
@@ -82,6 +83,9 @@ ff_server = {
 
 #_____________________________________________________________________________________________________________________________________________________
 
+def callback(url):
+    webbrowser.open_new(url)
+
 def select_file():
     filetypes = (
         ('json files', '*.json'),
@@ -117,8 +121,8 @@ def Install(config_path):
         warning.pack()
 
 window = tkinter.Tk()
-window.geometry('500x400+700+400')
-window.title("Format Friends installer for EDOpro")
+window.geometry('500x450+700+300')
+window.title("Format Friends installer for Edopro")
 
 info = tkinter.Label(window, text = "Tick the formats you want to install", font=("Arial", 16))
 info.pack()
@@ -127,16 +131,20 @@ checktab = []
 Button = []
 for i in range(len(repo_list)):
     checktab.append(tkinter.IntVar())
-    Button.append(tkinter.Checkbutton(window, text = repo_list[i]["repo_name"], font=("Arial", 11), variable = checktab[i], onvalue = 1, offvalue = 0))
+    Button.append(tkinter.Checkbutton(window, text = repo_list[i]["repo_name"], cursor="hand2", font=("Arial", 11), variable = checktab[i], onvalue = 1, offvalue = 0))
     Button[i].pack()
 
 server_info = tkinter.Label(window, text = "*Server is installed if you tick any format", font=("Arial", 12), fg='#888')
 server_info.pack()
 
-open_button = tkinter.Button(window, text='Select Configs.json path', font=("Arial", 13), command=select_file)
+open_button = tkinter.Button(window, text='Select Configs.json path', cursor="hand2", font=("Arial", 13), command=select_file)
 open_button.pack()
 
-install_button = tkinter.Button(window, text="Install", font=("Arial", 16), command=lambda: Install(open_button['text']))
+install_button = tkinter.Button(window, text="Install", cursor="hand2", font=("Arial", 16), command=lambda: Install(open_button['text']))
 install_button.pack()
+
+kofi = tkinter.Label(window, text="Support us on Ko-fi <3", cursor="hand2", font=("Arial", 10), fg='#36C')
+kofi.pack()
+kofi.bind("<Button-1>", lambda e: callback("https://ko-fi.com/zefile"))
 
 window.mainloop()
