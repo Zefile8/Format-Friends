@@ -4,7 +4,7 @@ Every tool available to the Format Friends owners and players.
 You may participate in editing these tools, download them, and/or edit them for your own use.
 
 You may not redistribute these tools or edited versions of them.
-_
+__
 Format Friends installer.py:
 code for the installer modifying Edopro's configs.json file to add the banlists and servers the user ticks.
 
