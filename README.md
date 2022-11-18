@@ -16,3 +16,5 @@ Also check:
 - Format Friends Discord: https://discord.com/invite/CynBQA6bYs
 - Garbo format Discord: https://discord.gg/zf9J2RUZkm
 - My other repositories!
+_____
+Message me on Discord at Zefile#5500 if you have any questions or issues.
