@@ -68,6 +68,14 @@ repo_list = [
         "lflist_path": ".",
         "should_update": True,
         "should_read": True
+    },
+    {
+        "url": "https://github.com/NoLegs1/everchanging",
+        "repo_name": "Everchanging banlist",
+        "repo_path": "./repositories/everchanging",
+        "lflist_path": ".",
+        "should_update": True,
+        "should_read": True
     }
 ]
 
