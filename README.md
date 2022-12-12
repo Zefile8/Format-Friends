@@ -10,6 +10,7 @@ Tools:
 - Format Friends installer.py: code for the installer modifying Edopro's configs.json file to add the banlists the user ticks and add the server to play them online.
 - update banlist.py: code to update a banlist based on the contents pulled from Edopro decklists.
 - update mappings.py: code to grab new IDs from mappings.json from Edopro and automatically applying ID updates to a banlist.
+- Everchange.py: code to grab a banlist from a github raw page and edit it. currently used for everchanging format, but easily adaptable.
 _____
 Also check:
 - https://formatfriendsygo.wixsite.com/formatfriendsygo
