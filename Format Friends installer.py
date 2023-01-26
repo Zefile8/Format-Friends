@@ -76,6 +76,14 @@ repo_list = [
         "lflist_path": ".",
         "should_update": True,
         "should_read": True
+    },
+    {
+        "url": "https://github.com/ARadGoat/Rogues-Format-Banlist-File",
+        "repo_name": "Rogues banlist",
+        "repo_path": "./repositories/rogues",
+        "lflist_path": ".",
+        "should_update": True,
+        "should_read": True
     }
 ]
 
