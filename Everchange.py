@@ -52,7 +52,8 @@ for case in output:
         if curcase == selectout and curcase in line and selectoutname == "":
             selectoutname = case[1]
             banlist.remove(line)
-print("- "+selectoutname+" ("+selectout+")")
+print("Removed:")
+print("-"+selectoutname+" ("+selectout+")")
 
 # write to file
 banlist_file.write('''!Everchanging Format\n$whitelist\n#Forbidden''')
@@ -71,10 +72,11 @@ if i != 3:
     banlist_file.write("\n#Unlimited")
 
 # select cards to add
-for i in range(1, 5):
+print("Added:")
+for i in range(1, 7):
     selectin = output[random.randint(0, len(output)-1)]
     banlist_file.write("\n"+str(selectin[0])+" 3")
-    print("+ "+selectin[1]+" ("+str(selectin[0])+")")
+    print("-"+selectin[1]+" ("+str(selectin[0])+")")
 
 banlist_file.flush()
 banlist_file.close()
