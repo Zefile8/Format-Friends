@@ -84,14 +84,6 @@ repo_list = [
         "lflist_path": ".",
         "should_update": True,
         "should_read": True
-    },
-    {
-        "url": "https://github.com/DemiCarbuncle/Crossover-Format",
-        "repo_name": "Crossover banlist",
-        "repo_path": "./repositories/crossover",
-        "lflist_path": ".",
-        "should_update": True,
-        "should_read": True
     }
 ]
 
