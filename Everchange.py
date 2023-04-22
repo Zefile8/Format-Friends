@@ -5,21 +5,27 @@ from urllib.request import urlopen
 #line exceptions
 exceptions = ("!Everchanging Format","$whitelist","#Forbidden","#Limited","#Semi-Limited","#Unlimited")
 
+#prepare vars
 banlist_file = open("Everchanging Format.lflist.conf","w+")
 banlist = []
 toadd = []
+output = []
 selectoutname = ""
 
 #grab current banlist
 banlist_url = urlopen("https://raw.githubusercontent.com/NoLegs1/everchanging/main/Everchanging%20Format.lflist.conf")
+# banlist_url = urlopen("https://raw.githubusercontent.com/NoLegs1/everchanging/main/testchanging.lflist.conf")
 textlist = banlist_url.read().decode("utf-8").splitlines()
 for line in textlist:
     if not any(exc in line for exc in exceptions):
         banlist.append(line)
 
-# Connecting databases
+# connecting databases
 cdb1 = sqlite3.connect('./expansions/cards.cdb')
 cdb2 = sqlite3.connect('./repositories/delta-puppet/cards.delta.cdb')
+# debug databases
+# cdb1 = sqlite3.connect('./cards.cdb')
+# cdb2 = sqlite3.connect('./cards.delta.cdb')
 
 # cursor object
 cursor_obj1 = cdb1.cursor()
@@ -32,7 +38,11 @@ cursor_obj2.execute(selectall)
 output1 = cursor_obj1.fetchall()
 output2 = cursor_obj2.fetchall()
 #getting the cards list in one variable
-output = output1 + output2
+combine = output1 + output2
+# remove duplicates
+for i in combine:
+  if i not in output:
+    output.append(i)
 
 # Close the connection
 cdb1.commit()
@@ -49,9 +59,9 @@ for case in output:
     for line in banlist:
         if curcase in line:
             output.remove(case)
-        if curcase == selectout and curcase in line and selectoutname == "":
-            selectoutname = case[1]
-            banlist.remove(line)
+            if curcase == selectout and selectoutname == "":
+                selectoutname = case[1]
+                banlist.remove(line)
 print("Removed:")
 print("-"+selectoutname+" ("+selectout+")")
 
@@ -77,6 +87,7 @@ for i in range(1, 7):
     selectin = output[random.randint(0, len(output)-1)]
     banlist_file.write("\n"+str(selectin[0])+" 3")
     print("-"+selectin[1]+" ("+str(selectin[0])+")")
+    output.remove(selectin)
 
 banlist_file.flush()
 banlist_file.close()
