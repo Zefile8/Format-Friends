@@ -3,10 +3,10 @@ import random
 from urllib.request import urlopen
 
 #line exceptions
-exceptions = ("!Everchanging Format","$whitelist","#Forbidden","#Limited","#Semi-Limited","#Unlimited")
+exceptions = ("!Evershifting Format","$whitelist","#Forbidden","#Limited","#Semi-Limited","#Unlimited")
 
 #prepare vars
-banlist_file = open("Everchanging Format.lflist.conf","w+")
+banlist_file = open("Evershifting Format.lflist.conf","w+")
 banlist = []
 database = []
 selectin = []
@@ -17,7 +17,7 @@ nbremove = int(input("Nb to remove: "))
 nbadd = int(input("Nb to add: "))
 
 #grab current banlist
-banlist_url = urlopen("https://raw.githubusercontent.com/NoLegs1/everchanging/main/Everchanging%20Format.lflist.conf")
+banlist_url = urlopen("https://raw.githubusercontent.com/NoLegs1/everchanging/main/Evershifting%20Format.lflist.conf")
 textlist = banlist_url.read().decode("utf-8").splitlines()
 for line in textlist:
     if not any(exc in line for exc in exceptions):
@@ -73,7 +73,7 @@ for line in banlist:
         print("-"+"name not found"+" ("+line.replace(" ", "")[:-1]+")")
 
 # write banlist to file
-banlist_file.write('''!Everchanging Format\n$whitelist\n#Forbidden''')
+banlist_file.write('''!Evershifting Format\n$whitelist\n#Forbidden''')
 i = 0
 for line in banlist:
     line = line.replace(" ", "")
