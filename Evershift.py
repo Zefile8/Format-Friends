@@ -61,11 +61,15 @@ for case in database:
     casename = case[1]
     caseid = str(caseid)
     for line in banlist:
-        if caseid in line:
-            database.remove(case)
+        lineid = line.replace(" ", "")[:-1]
+        if caseid == lineid:
+            try:
+                database.remove(case)
+            except:
+                print("error occured, id duplicate: "+str(caseid))
             if line in selectout:
                 banlist.remove(line)
-                print("-"+casename+" ("+line.replace(" ", "")[:-1]+")")
+                print("-"+casename+" ("+lineid+")")
 #failsafe
 for line in banlist:
     if line in selectout:
