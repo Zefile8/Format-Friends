@@ -11,10 +11,14 @@ banlist = []
 database = []
 selectin = []
 selectout = []
-nbremove = 2
-nbadd = 10
-nbremove = int(input("Nb to remove: "))
-nbadd = int(input("Nb to add: "))
+try:
+    nbremove = int(input("Nb to remove: "))
+except:
+    nbremove = 2
+try:
+    nbadd = int(input("Nb to add: "))
+except:
+    nbadd = 10
 
 #grab current banlist
 banlist_url = urlopen("https://raw.githubusercontent.com/NoLegs1/everchanging/main/Everchanging%20Format.lflist.conf")
@@ -26,9 +30,6 @@ for line in textlist:
 # connecting databases
 cdb1 = sqlite3.connect('./expansions/cards.cdb')
 cdb2 = sqlite3.connect('./repositories/delta-puppet/cards.delta.cdb')
-# debug databases
-# cdb1 = sqlite3.connect('./cards.cdb')
-# cdb2 = sqlite3.connect('./cards.delta.cdb')
 
 # cursor object
 cursor_obj1 = cdb1.cursor()
@@ -51,30 +52,13 @@ cdb2.commit()
 cdb1.close()
 cdb2.close()
 
+
 # select card(s) to remove
 selectout = random.sample(banlist, nbremove)
-
-# remove banlist matches from database
+banlist = [notout for notout in banlist if notout not in selectout]
 print("Removed:")
-for case in database:
-    caseid = case[0]
-    casename = case[1]
-    caseid = str(caseid)
-    for line in banlist:
-        lineid = line.replace(" ", "")[:-1]
-        if caseid == lineid:
-            try:
-                database.remove(case)
-            except:
-                print("error occured, id duplicate: "+str(caseid))
-            if line in selectout:
-                banlist.remove(line)
-                print("-"+casename+" ("+lineid+")")
-#failsafe
-for line in banlist:
-    if line in selectout:
-        banlist.remove(line)
-        print("-"+"name not found"+" ("+line.replace(" ", "")[:-1]+")")
+for line in selectout:
+    print("-"+" ("+line.replace(" ", "")[:-1]+")")
 
 # write banlist to file
 banlist_file.write('''!Everchanging Format\n$whitelist\n#Forbidden''')
@@ -87,17 +71,30 @@ for line in banlist:
         if i == 2 : banlist_file.write("\n#Semi-Limited")
         if i == 3 : banlist_file.write("\n#Unlimited")
     banlist_file.write("\n"+line[:-1]+" "+str(i))
-
-if i != 3:
-    i = 3
-    banlist_file.write("\n#Unlimited")
+while i < 3:
+    i += 1
+    if i == 1 : banlist_file.write("\n#Limited")
+    if i == 2 : banlist_file.write("\n#Semi-Limited")
+    if i == 3 : banlist_file.write("\n#Unlimited")
 
 # select cards to add
-selectin = random.sample(database, nbadd)
+i = 0
 print("Added:")
-for i in selectin:
-    banlist_file.write("\n"+str(i[0])+" 3")
-    print("-"+i[1]+" ("+str(i[0])+")")
+while i<nbadd:
+    duplicate = 0
+    selectin = random.choice(database)
+    exceptions = banlist + selectout
+    for line in exceptions:
+        lineid = line.replace(" ", "")[:-1]
+        if str(selectin[0]) == lineid:
+            print("duplicate found: "+selectin[1])
+            duplicate = 1
+    if duplicate == 0:
+        newline = str(selectin[0])+" 3"
+        banlist.append(newline)
+        banlist_file.write("\n"+str(selectin[0])+" 3")
+        print("-"+selectin[1]+" ("+str(selectin[0])+")")
+        i += 1
 
 banlist_file.flush()
 banlist_file.close()
