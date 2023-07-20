@@ -21,8 +21,6 @@ name_exception = ("!"+format+" Format")
 exceptions = (name_exception,"$whitelist","#Forbidden","#Limited","#Semi-Limited","#Unlimited")
 
 #prepare vars
-filename = (format+" Format.lflist.conf")
-banlist_file = open(filename,"w+")
 banlist = []
 database = []
 selectin = []
@@ -41,6 +39,10 @@ textlist = banlist_url.read().decode("utf-8").splitlines()
 for line in textlist:
     if not any(exc in line for exc in exceptions):
         banlist.append(line)
+
+#create file
+filename = (format+" Format.lflist.conf")
+banlist_file = open(filename,"w+")
 
 # connecting databases
 cdb1 = sqlite3.connect('./expansions/cards.cdb')
@@ -75,7 +77,7 @@ for line in selectout:
     print("-"+" ("+line.replace(" ", "")[:-1]+")")
 
 # write banlist to file
-banlist_file.write('''!Everchanging Format\n$whitelist\n#Forbidden''')
+banlist_file.write(name_exception+'''\n$whitelist\n#Forbidden''')
 i = 0
 for line in banlist:
     line = line.replace(" ", "")
