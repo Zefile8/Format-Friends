@@ -1,7 +1,7 @@
 import string
 import json
 
-list_name = "GARBO.lflist.conf"
+list_name = "banlist.lflist.conf"
 map_name = "mappings.json"
 edits = 0
 
