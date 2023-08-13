@@ -4,7 +4,7 @@ from tkinter.messagebox import showinfo
 import webbrowser
 import json
 from urllib.request import urlopen
-config_url = urlopen("https://raw.githubusercontent.com/ProjectIgnis/Distribution/master/config/configs.prod.json")
+config_url = urlopen("https://raw.githubusercontent.com/ProjectIgnis/Distribution/master/config/configs.json")
 config_data = json.load(config_url)
 repos = config_data['repos']
 servers = config_data['servers']
@@ -34,14 +34,6 @@ repo_list = [
         "repo_path": "./repositories/TrinityEXP",
         "data_path": "expansions",
         "script_path": "script",
-        "should_update": True,
-        "should_read": True
-    },
-    {
-        "url": "https://github.com/Ejeffers1239/KuchenLists",
-        "repo_name": "Kuchen banlists",
-        "repo_path": "./repositories/KuchenLISTS",
-        "lflist_path": ".",
         "should_update": True,
         "should_read": True
     },
