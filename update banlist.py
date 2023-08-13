@@ -2,11 +2,11 @@ import string
 import re
 
 #get banlist to edit
-list_name = "GARBO.lflist.conf"
-banned_comment = "#forbidden GARBO"
-limited_comment = "#limited GARBO"
-semi_comment = "#semi-limited GARBO"
-unlimited_comment = "#unlimited GARBO"
+list_name = "banlist.lflist.conf"
+banned_comment = "#forbidden"
+limited_comment = "#limited"
+semi_comment = "#semi-limited"
+unlimited_comment = "#unlimited"
 with open(list_name, 'r') as list:
     list_data = list.read()
 
@@ -18,11 +18,11 @@ unlimited = 0
 oof = 0
 
 #get decklists
-banned_deck = "¤GARBO 1 - banned.ydk"
-limited_deck = "¤GARBO 2 - limited.ydk"
-semi_deck = "¤GARBO 3 - semi-limited.ydk"
-unlimited_deck = "¤GARBO 4 - unlimited.ydk"
-oof_deck = "¤GARBO 5 - O.O.F..ydk"
+banned_deck = "¤banlist 1 - banned.ydk"
+limited_deck = "¤banlist 2 - limited.ydk"
+semi_deck = "¤banlist 3 - semi-limited.ydk"
+unlimited_deck = "¤banlist 4 - unlimited.ydk"
+oof_deck = "¤banlist 5 - O.O.F..ydk"
 
 #get decklist
 f = open(banned_deck)
