@@ -8,7 +8,7 @@ If you appreciate my work here, on Garbo format, or on Format Friends, you can s
 _____
 Tools:
 - Format Friends installer.py: code for the installer modifying Edopro's configs.json file to add the banlists the user ticks and add the server to play them online.
-- Banlist editors:
+- Banlist editors (use of symlink recommended to have all the necessary files in the same folder):
 
 update banlist.py: code to update a banlist based on the contents pulled from Edopro decklists.
 
