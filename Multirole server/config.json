@@ -104,7 +104,7 @@
 		"observedRepos": [
 			"bin"
 		],
-		"fileRegex": ".*ocgcore\\.dll",
+		"fileRegex": ".*libocgcore\\.so",
 		"tmpPath": "./tmp/",
 		"coreType": "hornet",
 		"loadPerRoom": true
