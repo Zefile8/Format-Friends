@@ -1,0 +1,196 @@
+{
+	"concurrencyHint": -1,
+	"lobbyListingPort": 7081,
+	"lobbyMaxConnections": 4,
+	"roomHostingPort": 5003,
+	"repos": [
+		{
+			"name": "scripts",
+			"remote": "https://github.com/ProjectIgnis/CardScripts",
+			"path": "./sync/scripts/",
+			"webhookPort": 34000,
+			"webhookToken": "scriptupdate"
+		},
+		{
+			"name": "databases",
+			"remote": "https://github.com/ProjectIgnis/BabelCDB",
+			"path": "./sync/databases/",
+			"webhookPort": 34010,
+			"webhookToken": "databaseupdate"
+		},
+		{
+			"name": "bin",
+			"remote": "https://github.com/ProjectIgnis/bin",
+			"path": "./sync/bin/",
+			"webhookPort": 34020,
+			"webhookToken": "binupdate"
+		},
+		{
+			"name": "Garbo banlist",
+			"remote": "https://github.com/Zefile8/Garbo-lflist",
+			"path": "./sync/garbo/",
+			"webhookPort": 34030,
+			"webhookToken": "garbobanlistupdate"
+		},
+		{
+			"name": "Everchanging banlist",
+			"remote": "https://github.com/NoLegs1/everchanging",
+			"path": "./sync/everchanging",
+			"webhookPort": 34040,
+			"webhookToken": "everchangingbanlistupdate"
+		},{
+			"name": "25th Forbidden & Limited Card Lists",
+			"remote": "https://github.com/thespideroi/25thLFlist",
+			"path": "./sync/25th/",
+			"webhookPort": 34060,
+			"webhookToken": "25thbanlistupdate"
+		},
+		{
+			"name": "Common Charity & Disco Inferno",
+			"remote": "https://github.com/diamonddudetcg/format_friends",
+			"path": "./sync/charity-disco/",
+			"webhookPort": 34070,
+			"webhookToken": "discobanlistupdate"
+		},
+		{
+			"name": "Trinity LFList",
+			"remote": "https://github.com/Ejeffers1239/TrinityList",
+			"path": "./sync/trinity/",
+			"webhookPort": 34080,
+			"webhookToken": "trinitybanlistupdate"
+		},
+		{
+			"name": "TrinityScripts",
+			"remote": "https://github.com/Ejeffers1239/TrinityScripts",
+			"path": "./sync/TrinityScripts/",
+			"webhookPort": 34081,
+			"webhookToken": "trinityscriptupdate"
+		},
+		{
+			"name": "TrinityCDB",
+			"remote": "https://github.com/Ejeffers1239/TrinityCBD",
+			"path": "./sync/TrinityCDB/",
+			"webhookPort": 34082,
+			"webhookToken": "trinitycdbupdate"
+		},
+		{
+			"name": "3v3 Tag Duel",
+			"remote": "https://github.com/Bewilderer/3v3-banlist-ifconfig-file",
+			"path": "./sync/3v3tag/",
+			"webhookPort": 34090,
+			"webhookToken": "3v3banlistupdate"
+		},
+		{
+			"name": "rogues banlist",
+			"remote": "https://github.com/ARadGoat/Rogues-Format-Banlist-File",
+			"path": "./sync/rogues/",
+			"webhookPort": 34100,
+			"webhookToken": "roguesbanlistupdate"
+		}
+	],
+	"banlistProvider": {
+		"observedRepos": [
+			"Garbo banlist",
+			"Everchanging banlist",
+			"Trinity LFList",
+			"25th Forbidden & Limited Card Lists",
+			"Common Charity & Disco Inferno",
+			"3v3 Tag Duel",
+			"rogues banlist"
+		],
+		"fileRegex": ".*\\.lflist\\.conf"
+	},
+	"coreProvider": {
+		"observedRepos": [
+			"bin"
+		],
+		"fileRegex": ".*ocgcore\\.dll",
+		"tmpPath": "./tmp/",
+		"coreType": "hornet",
+		"loadPerRoom": true
+	},
+	"dataProvider": {
+		"observedRepos": [
+			"databases",
+			"TrinityCDB"
+		],
+		"fileRegex": ".*\\.cdb"
+	},
+	"logHandler": {
+		"serviceSinks": {
+			"gitRepo": {
+				"type": "stdout",
+				"properties": {}
+			},
+			"multirole": {
+				"type": "stdout",
+				"properties": {}
+			},
+			"banlistProvider": {
+				"type": "stdout",
+				"properties": {}
+			},
+			"coreProvider": {
+				"type": "stdout",
+				"properties": {}
+			},
+			"dataProvider": {
+				"type": "stdout",
+				"properties": {}
+			},
+			"logHandler": {
+				"type": "stdout",
+				"properties": {}
+			},
+			"replayManager": {
+				"type": "stdout",
+				"properties": {}
+			},
+			"scriptProvider": {
+				"type": "stdout",
+				"properties": {}
+			},
+			"other": {
+				"type": "stdout",
+				"properties": {}
+			}
+		},
+		"ecSinks": {
+			"core": {
+				"type": "stderr",
+				"properties": {}
+			},
+			"official": {
+				"type": "stderr",
+				"properties": {}
+			},
+			"speed": {
+				"type": "stderr",
+				"properties": {}
+			},
+			"rush": {
+				"type": "stderr",
+				"properties": {}
+			},
+			"other": {
+				"type": "stderr",
+				"properties": {}
+			}
+		},
+		"roomLogging": {
+			"enabled": false,
+			"path": "./room-logs/"
+		}
+	},
+	"replayManager": {
+		"save": true,
+		"path": "./replays/"
+	},
+	"scriptProvider": {
+		"observedRepos": [
+			"scripts",
+			"TrinityScripts"
+		],
+		"fileRegex": ".*\\.lua"
+	}
+}
