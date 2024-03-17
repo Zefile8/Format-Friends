@@ -83,9 +83,9 @@ repo_list = [
 
 ff_server = {
     "name": "EU Central (Format Friends)",
-    "address": "13.39.76.61",
+    "address": "89.168.46.196",
     "duelport": 5003,
-    "roomaddress": "13.39.76.61",
+    "roomaddress": "89.168.46.196",
     "roomlistport": 7081
 }
 
