@@ -89,7 +89,7 @@
 		},
 		{
 			"name": "Sleipnir banlist",
-			"remote": "https://github.com/ARadGoat/Rogues-Format-Banlist-File",
+			"remote": "https://github.com/eej4105/Sleipnir-Yugioh",
 			"path": "./sync/sleipnir/",
 			"webhookPort": 34110,
 			"webhookToken": "sleipnirbanlistupdate"
@@ -103,7 +103,7 @@
 			"25th Forbidden & Limited Card Lists",
 			"Common Charity & Disco Inferno",
 			"3v3 Tag Duel",
-			"rogues banlist",
+			"Rogues banlist",
 			"Sleipnir banlist"
 		],
 		"fileRegex": ".*\\.lflist\\.conf"
