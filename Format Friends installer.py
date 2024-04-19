@@ -76,6 +76,14 @@ repo_list = [
         "lflist_path": ".",
         "should_update": True,
         "should_read": True
+    },
+    {
+        "url": "https://github.com/eej4105/Sleipnir-Yugioh",
+        "repo_name": "Sleipnir banlist",
+        "repo_path": "./repositories/sleipnir",
+        "lflist_path": ".",
+        "should_update": True,
+        "should_read": True
     }
 ]
 
