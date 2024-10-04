@@ -90,10 +90,10 @@ repo_list = [
 #_____________________________________________________________________________________________________________________________________________________
 
 ff_server = {
-    "name": "EU Central (Format Friends)",
-    "address": "89.168.46.196",
+    "name": "EU Central (Format Friends v4)",
+    "address": "89.168.36.10",
     "duelport": 5003,
-    "roomaddress": "89.168.46.196",
+    "roomaddress": "89.168.36.10",
     "roomlistport": 7081
 }
 
