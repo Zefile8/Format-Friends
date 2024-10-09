@@ -46,14 +46,6 @@ repo_list = [
         "should_read": True
     },
     {
-        "url": "https://github.com/diamonddudetcg/format_friends",
-        "repo_name": "Common Charity & Disco Inferno banlists",
-        "repo_path": "./repositories/CommonDiscoLISTS",
-        "lflist_path": ".",
-        "should_update": True,
-        "should_read": True
-    },
-    {
         "url": "https://github.com/Bewilderer/3v3-banlist-ifconfig-file",
         "repo_name": "3v3 Tag Duel banlist",
         "repo_path": "./repositories/3v3-lflist",
