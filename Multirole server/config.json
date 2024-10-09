@@ -46,13 +46,6 @@
 			"webhookToken": "25thbanlistupdate"
 		},
 		{
-			"name": "Common Charity & Disco Inferno",
-			"remote": "https://github.com/diamonddudetcg/format_friends",
-			"path": "./sync/charity-disco/",
-			"webhookPort": 34070,
-			"webhookToken": "discobanlistupdate"
-		},
-		{
 			"name": "Trinity LFList",
 			"remote": "https://github.com/Ejeffers1239/TrinityList",
 			"path": "./sync/trinity/",
