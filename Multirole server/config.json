@@ -47,7 +47,7 @@
 		},
 		{
 			"name": "Trinity LFList",
-			"remote": "https://github.com/Ejeffers1239/TrinityList",
+			"remote": "https://github.com/Quakedrop/Trinity-Banlists",
 			"path": "./sync/trinity/",
 			"webhookPort": 34080,
 			"webhookToken": "trinitybanlistupdate"
