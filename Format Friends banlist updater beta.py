@@ -147,7 +147,7 @@ window.geometry('500x450+700+300')
 window.title("Format Friends banlist updater for Edopro")
 Button = []
 
-open_button = tkinter.Button(window, text='Select Edopro folder', cursor="hand2", font=("Arial", 13), command=select_folder)
+open_button = tkinter.Button(window, text='Select ProjectIgnis folder', cursor="hand2", font=("Arial", 13), command=select_folder)
 open_button.pack()
 
 update_button = tkinter.Button(window, text="Update banlist", cursor="hand2", font=("Arial", 16), command=lambda: update_banlist(open_button['text']))

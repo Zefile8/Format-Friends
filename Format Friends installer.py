@@ -21,7 +21,7 @@ repo_list = [
         "should_read": True
     },
     {
-        "url": "https://github.com/Ejeffers1239/TrinityList",
+        "url": "https://github.com/Quakedrop/Trinity-Banlists",
         "repo_name": "Trinity banlist",
         "repo_path": "./repositories/TrinityLIST",
         "lflist_path": ".",
@@ -94,24 +94,18 @@ ff_server = {
 def callback(url):
     webbrowser.open_new(url)
 
-def select_file():
-    filetypes = (
-        ('json files', '*.json'),
-        ('All files', '*.*')
-    )
+def select_folder():    
+    folder = fd.askdirectory(
+        title='Select your ProjectIgnis folder',
+        initialdir='C:')
     
-    filename = fd.askopenfilename(
-        title='Open your configs.json file',
-        initialdir='C:\ProjectIgnis\config',
-        filetypes=filetypes)
-    
-    if filename != "":
-        open_button['text'] = filename
+    if folder != "":
+        open_button['text'] = folder
 
-def Install(config_path):
-    if open_button['text'] != "Select Configs.json path":
-        print("installing to: " + open_button['text'])
-        with open(config_path, 'w') as config_local:
+def Install(edo_path):
+    if edo_path != "Select Configs.json path":
+        print("installing to: " + edo_path)
+        with open(edo_path+"/config/configs.json", 'w') as config_local:
             count = 0
             for i in range(len(repo_list)):
                 if checktab[i].get() == 1:
@@ -127,6 +121,8 @@ def Install(config_path):
     else:
         warning = tkinter.Label(window, text = "Choose an installation path!", font=("Arial", 13), fg='#f00')
         warning.pack()
+
+#_____________________________________________________________________________________________________________________________________________________
 
 window = tkinter.Tk()
 window.geometry('500x450+700+300')
@@ -145,7 +141,7 @@ for i in range(len(repo_list)):
 server_info = tkinter.Label(window, text = "*Server is installed if you tick any format", font=("Arial", 12), fg='#888')
 server_info.pack()
 
-open_button = tkinter.Button(window, text='Select Configs.json path', cursor="hand2", font=("Arial", 13), command=select_file)
+open_button = tkinter.Button(window, text='Select ProjectIgnis folder', cursor="hand2", font=("Arial", 13), command=select_folder)
 open_button.pack()
 
 install_button = tkinter.Button(window, text="Install", cursor="hand2", font=("Arial", 16), command=lambda: Install(open_button['text']))
