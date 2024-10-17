@@ -86,6 +86,13 @@
 			"path": "./sync/sleipnir/",
 			"webhookPort": 34110,
 			"webhookToken": "sleipnirbanlistupdate"
+		},
+		{
+			"name": "ACG banlist",
+			"remote": "https://github.com/Contrax111/ACG-Banlist",
+			"path": "./sync/ACG/",
+			"webhookPort": 34120,
+			"webhookToken": "acgbanlistupdate"
 		}
 	],
 	"banlistProvider": {
@@ -96,7 +103,8 @@
 			"25th Forbidden & Limited Card Lists",
 			"3v3 Tag Duel",
 			"Rogues banlist",
-			"Sleipnir banlist"
+			"Sleipnir banlist",
+			"ACG banlist"
 		],
 		"fileRegex": ".*\\.lflist\\.conf"
 	},
