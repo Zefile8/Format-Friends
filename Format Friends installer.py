@@ -127,7 +127,7 @@ def select_folder():
         open_button['text'] = folder
 
 def Install(edo_path):
-    if edo_path != "Select Configs.json path":
+    if edo_path != "Select ProjectIgnis folder":
         print("installing to: " + edo_path)
         with open(edo_path+"/config/configs.json", 'w') as config_local:
             for i in range(len(repo_list)):
@@ -140,6 +140,7 @@ def Install(edo_path):
                 servers.append(ff_server)
             json.dump(config_data, config_local, indent=4)
         install_button['text'] = "Done!"
+        install_button["state"] = "disabled"
         print("Done!")
     else:
         warning = tkinter.Label(window, text = "Choose an installation path!", font=("Arial", 13), fg='#f00')
