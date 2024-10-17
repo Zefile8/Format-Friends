@@ -91,7 +91,17 @@ sleipnir = [
         "should_read": True
     }
 ]
-repo_list = [garbo,trinity,_25th,_3v3,everchanging,rogues,sleipnir]
+acg = [
+    {
+        "url": "https://github.com/Contrax111/ACG-Banlist",
+        "repo_name": "ACG banlist",
+        "repo_path": "./repositories/ACG",
+        "lflist_path": ".",
+        "should_update": True,
+        "should_read": True
+    }
+]
+repo_list = [garbo,trinity,_25th,_3v3,everchanging,rogues,sleipnir,acg]
 
 #_____________________________________________________________________________________________________________________________________________________
 
