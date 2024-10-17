@@ -115,6 +115,7 @@ def update_banlist(edo_path,list_path):
             print("\n")
             print("Done!")
             update_button['text'] = "Done!"
+            update_button["state"] = "disabled"
         else:
             warning = tkinter.Label(window, text = "Files missing!", font=("Arial", 13), fg='#f00')
             warning.pack()
@@ -145,6 +146,7 @@ def update_mappings(edo_path,list_path):
             print("\nid updates: " + str(edits)+"\n")
             print("Done!")
             mappings_button['text'] = "Done!"
+            mappings_button["state"] = "disabled"
         else:
             warning = tkinter.Label(window, text = "Files missing!", font=("Arial", 13), fg='#f00')
             warning.pack()
