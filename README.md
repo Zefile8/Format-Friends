@@ -4,7 +4,7 @@ This repository is a list of tools available for the Format Friends owners and p
 You may participate in editing these tools, download them, and/or edit them for your own use.
 You may not redistribute these tools or edited versions of them.
 
-If you appreciate my work here, on Garbo format, or on Format Friends, you can support me on Ko-fi.
+If you appreciate my work here, on Revolution format, or on Format Friends, you can support me on Ko-fi.
 _____
 Tools:
 - Format Friends installer.py: program for the installer modifying Edopro's configs.json file to add the banlists the user ticks and add the server to play them online.
@@ -14,7 +14,7 @@ _____
 Also check:
 - https://formatfriendsygo.wixsite.com/formatfriendsygo
 - Format Friends Discord: https://discord.com/invite/CynBQA6bYs
-- Garbo format Discord: https://discord.gg/zf9J2RUZkm
+- Revolution format Discord: https://discord.gg/zf9J2RUZkm
 - My other repositories!
 _____
 Message me on Discord @zefile if you have any questions or issues.
