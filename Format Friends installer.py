@@ -12,10 +12,10 @@ servers = config_data['servers']
 #_____________________________________________________________________________________________________________________________________________________
 
 
-garbo = [
+revolution = [
     {
         "url": "https://github.com/Zefile8/Garbo-lflist",
-        "repo_name": "Garbo banlist",
+        "repo_name": "Revolution banlist",
         "repo_path": "./repositories/Garbo-lflist",
         "lflist_path": ".",
         "should_update": True,
@@ -101,7 +101,7 @@ acg = [
         "should_read": True
     }
 ]
-repo_list = [garbo,trinity,_25th,_3v3,everchanging,rogues,sleipnir,acg]
+repo_list = [revolution,trinity,_25th,_3v3,everchanging,rogues,sleipnir,acg]
 
 #_____________________________________________________________________________________________________________________________________________________
 
