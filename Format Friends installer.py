@@ -4,114 +4,16 @@ from tkinter.messagebox import showinfo
 import webbrowser
 import json
 from urllib.request import urlopen
+
 config_url = urlopen("https://raw.githubusercontent.com/ProjectIgnis/Distribution/master/config/configs.json")
 config_data = json.load(config_url)
 repos = config_data['repos']
 servers = config_data['servers']
 
-#_____________________________________________________________________________________________________________________________________________________
-
-
-revolution = [
-    {
-        "url": "https://github.com/Zefile8/Garbo-lflist",
-        "repo_name": "Revolution banlist",
-        "repo_path": "./repositories/Garbo-lflist",
-        "lflist_path": ".",
-        "should_update": True,
-        "should_read": True
-    }
-]
-trinity = [
-    {
-        "url": "https://github.com/Quakedrop/Trinity-Banlists",
-        "repo_name": "Trinity banlist",
-        "repo_path": "./repositories/TrinityLIST",
-        "lflist_path": ".",
-        "should_update": True,
-        "should_read": True
-    },
-    {
-        "url": "https://github.com/Ejeffers1239/TrinityExtension",
-        "repo_name": "Trinity Expansion",
-        "repo_path": "./repositories/TrinityEXP",
-        "data_path": "expansions",
-        "script_path": "script",
-        "should_update": True,
-        "should_read": True
-    }
-]
-_25th = [
-    {
-        "url": "https://github.com/thespideroi/25thLFlist",
-        "repo_name": "25th Forbidden & Limited Card banlist",
-        "repo_path": "./repositories/25thlflist",
-        "lflist_path": ".",
-        "should_update": True,
-        "should_read": True
-    }
-]
-_3v3 = [
-    {
-        "url": "https://github.com/Bewilderer/3v3-banlist-ifconfig-file",
-        "repo_name": "3v3 Tag Duel banlist",
-        "repo_path": "./repositories/3v3-lflist",
-        "lflist_path": ".",
-        "should_update": True,
-        "should_read": True
-    }
-]
-everchanging = [
-    {
-        "url": "https://github.com/NoLegs1/everchanging",
-        "repo_name": "Everchanging banlist",
-        "repo_path": "./repositories/everchanging",
-        "lflist_path": ".",
-        "should_update": True,
-        "should_read": True
-    }
-]
-rogues = [
-    {
-        "url": "https://github.com/ARadGoat/Rogues-Format-Banlist-File",
-        "repo_name": "Rogues banlist",
-        "repo_path": "./repositories/rogues",
-        "lflist_path": ".",
-        "should_update": True,
-        "should_read": True
-    }
-]
-sleipnir = [
-    {
-        "url": "https://github.com/eej4105/Sleipnir-Yugioh",
-        "repo_name": "Sleipnir banlist",
-        "repo_path": "./repositories/sleipnir",
-        "lflist_path": ".",
-        "should_update": True,
-        "should_read": True
-    }
-]
-acg = [
-    {
-        "url": "https://github.com/Contrax111/ACG-Banlist",
-        "repo_name": "ACG banlist",
-        "repo_path": "./repositories/ACG",
-        "lflist_path": ".",
-        "should_update": True,
-        "should_read": True
-    }
-]
-repo_list = [revolution,trinity,_25th,_3v3,everchanging,rogues,sleipnir,acg]
-
-#_____________________________________________________________________________________________________________________________________________________
-
-ff_server = {
-    "name": "EU Central (Format Friends v4)",
-    "address": "89.168.36.10",
-    "duelport": 5003,
-    "roomaddress": "89.168.36.10",
-    "roomlistport": 7081
-}
+ff_config_url = urlopen("https://raw.githubusercontent.com/Zefile8/Format-Friends/refs/heads/main/Multirole%20server/options.json")
+ff_config_data = json.load(ff_config_url)
+ff_repos = ff_config_data['repos']
+ff_servers = ff_config_data['servers']
 
 #_____________________________________________________________________________________________________________________________________________________
 
@@ -130,14 +32,19 @@ def Install(edo_path):
     if edo_path != "Select ProjectIgnis folder":
         print("installing to: " + edo_path)
         with open(edo_path+"/config/configs.json", 'w') as config_local:
-            for i in range(len(repo_list)):
+            i = 0
+            for format in ff_repos:
                 if checktab[i].get() == 1:
-                    for j in range(len(repo_list[i])):
-                        print("installing repo: "+repo_list[i][j]["repo_name"])
-                        repos.append(repo_list[i][j])
-            if checktab[i+1].get() == 1:
-                print("installing Format Friends server")
-                servers.append(ff_server)
+                    for j in range(len(ff_repos[format])):
+                        print("installing repo: "+ff_repos[format][j]["repo_name"])
+                        repos.append(ff_repos[format][j])
+                i += 1
+            for server in ff_servers:
+                if checktab[i].get() == 1:
+                    for j in range(len(ff_servers[server])):
+                        print("installing repo: "+ff_servers[server][j]["name"])
+                        servers.append(ff_servers[server][j])
+                    i += 1
             json.dump(config_data, config_local, indent=4)
         install_button['text'] = "Done!"
         install_button["state"] = "disabled"
@@ -150,24 +57,28 @@ def Install(edo_path):
 
 window = tkinter.Tk()
 window.geometry('500x450+700+300')
-window.title("Format Friends installer for Edopro")
+window.title("Format Friends installer for Edopro v1.3.2.0")
 
 info = tkinter.Label(window, text = "Thank you for using the Format Friends installer!", font=("Arial", 16))
 info.pack()
 
-info = tkinter.Label(window, text = "Tick the features you want applied", font=("Arial", 14))
+info = tkinter.Label(window, text = "Tick what you want, untick to uninstall", font=("Arial", 14))
 info.pack()
 
+i = 0
 checktab = []
 Button = []
-for i in range(len(repo_list)):
+for format in ff_repos:
     checktab.append(tkinter.IntVar())
-    Button.append(tkinter.Checkbutton(window, text = repo_list[i][0]["repo_name"], cursor="hand2", font=("Arial", 12), variable = checktab[i], onvalue = 1, offvalue = 0))
+    Button.append(tkinter.Checkbutton(window, text = ff_repos[format][0]["repo_name"], cursor="hand2", font=("Arial", 12), variable = checktab[i], onvalue = 1, offvalue = 0))
     Button[i].pack()
+    i += 1
 
-checktab.append(tkinter.IntVar())
-Button.append(tkinter.Checkbutton(window, text = "Format Friends online server", cursor="hand2", font=("Arial", 14), variable = checktab[i+1], onvalue = 1, offvalue = 0))
-Button[i+1].pack()
+for server in ff_servers:
+    checktab.append(tkinter.IntVar())
+    Button.append(tkinter.Checkbutton(window, text = ff_servers[server][0]["name"]+" online server", cursor="hand2", font=("Arial", 14), variable = checktab[i], onvalue = 1, offvalue = 0))
+    Button[i].pack()
+    i += 1
 
 open_button = tkinter.Button(window, text='Select ProjectIgnis folder', cursor="hand2", font=("Arial", 13), command=select_folder)
 open_button.pack()
