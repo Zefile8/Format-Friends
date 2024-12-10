@@ -89,7 +89,7 @@
 				"should_read": true
 			}
 		]
-	}
+	},
 	"servers": {
 		"ff_server": {
 			"name": "EU Central (Format Friends v4)",
