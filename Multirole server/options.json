@@ -32,7 +32,7 @@
 		"_25th": [
 			{
 				"url": "https://github.com/thespideroi/25thLFlist",
-				"repo_name": "25th Forbidden & Limited Card banlist",
+				"repo_name": "25th percentile banlist",
 				"repo_path": "./repositories/25thlflist",
 				"lflist_path": ".",
 				"should_update": true,
