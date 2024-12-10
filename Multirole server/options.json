@@ -1,0 +1,102 @@
+{
+	"repos": {
+		"revolution": [
+			{
+				"url": "https://github.com/Zefile8/Garbo-lflist",
+				"repo_name": "Revolution banlist",
+				"repo_path": "./repositories/Garbo-lflist",
+				"lflist_path": ".",
+				"should_update": true,
+				"should_read": true
+			}
+		],
+		"trinity": [
+			{
+				"url": "https://github.com/Quakedrop/Trinity-Banlists",
+				"repo_name": "Trinity banlist",
+				"repo_path": "./repositories/TrinityLIST",
+				"lflist_path": ".",
+				"should_update": true,
+				"should_read": true
+			},
+			{
+				"url": "https://github.com/Ejeffers1239/TrinityExtension",
+				"repo_name": "Trinity Expansion",
+				"repo_path": "./repositories/TrinityEXP",
+				"data_path": "expansions",
+				"script_path": "script",
+				"should_update": true,
+				"should_read": true
+			}
+		],
+		"_25th": [
+			{
+				"url": "https://github.com/thespideroi/25thLFlist",
+				"repo_name": "25th Forbidden & Limited Card banlist",
+				"repo_path": "./repositories/25thlflist",
+				"lflist_path": ".",
+				"should_update": true,
+				"should_read": true
+			}
+		],
+		"_3v3": [
+			{
+				"url": "https://github.com/Bewilderer/3v3-banlist-ifconfig-file",
+				"repo_name": "3v3 Tag Duel banlist",
+				"repo_path": "./repositories/3v3-lflist",
+				"lflist_path": ".",
+				"should_update": true,
+				"should_read": true
+			}
+		],
+		"everchanging": [
+			{
+				"url": "https://github.com/NoLegs1/everchanging",
+				"repo_name": "Everchanging banlist",
+				"repo_path": "./repositories/everchanging",
+				"lflist_path": ".",
+				"should_update": true,
+				"should_read": true
+			}
+		],
+		"rogues": [
+			{
+				"url": "https://github.com/ARadGoat/Rogues-Format-Banlist-File",
+				"repo_name": "Rogues banlist",
+				"repo_path": "./repositories/rogues",
+				"lflist_path": ".",
+				"should_update": true,
+				"should_read": true
+			}
+		],
+		"sleipnir": [
+			{
+				"url": "https://github.com/eej4105/Sleipnir-Yugioh",
+				"repo_name": "Sleipnir banlist",
+				"repo_path": "./repositories/sleipnir",
+				"lflist_path": ".",
+				"should_update": true,
+				"should_read": true
+			}
+		],
+		"acg": [
+			{
+				"url": "https://github.com/Contrax111/ACG-Banlist",
+				"repo_name": "ACG banlist",
+				"repo_path": "./repositories/ACG",
+				"lflist_path": ".",
+				"should_update": true,
+				"should_read": true
+			}
+		]
+	}
+	"servers": {
+		"ff_server": {
+			"name": "EU Central (Format Friends v4)",
+			"address": "89.168.36.10",
+			"duelport": 5003,
+			"roomaddress": "89.168.36.10",
+			"roomlistport": 7081
+		}
+	}
+}
