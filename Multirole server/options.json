@@ -91,12 +91,14 @@
 		]
 	},
 	"servers": {
-		"ff_server": {
-			"name": "EU Central (Format Friends v4)",
-			"address": "89.168.36.10",
-			"duelport": 5003,
-			"roomaddress": "89.168.36.10",
-			"roomlistport": 7081
-		}
+		"ff_server": [
+			{
+				"name": "EU Central (Format Friends v4)",
+				"address": "89.168.36.10",
+				"duelport": 5003,
+				"roomaddress": "89.168.36.10",
+				"roomlistport": 7081
+			}
+		]
 	}
 }
