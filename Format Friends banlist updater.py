@@ -127,7 +127,7 @@ def update_mappings(edo_path,list_path):
     if (open_button['text'] != "Select Edopro folder" and list_button['text'] != "Select .lflist.conf file"):
         if True:#if all files found
             print("\nupdating from: " + open_button['text'])
-            map_name = edo_path + "/repositories/delta-puppet/mappings.json"
+            map_name = edo_path + "/repositories/delta-bagooska/mappings.json"
             edits = 0
             with open(map_name) as map_file:
                 map_data = json.load(map_file)
